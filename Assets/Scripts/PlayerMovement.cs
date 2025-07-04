@@ -13,28 +13,27 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerControls controls;
     private Animator animator;
+    private Rigidbody2D rb;
 
     void Awake()
     {
         controls = new PlayerControls();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         controls.Player.Move.performed += ctx => input = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => input = Vector2.zero;
     }
 
     void OnEnable() => controls.Enable();
     void OnDisable() => controls.Disable();
-
     void Update()
     {
         if (!isMoving && input != Vector2.zero)
         {
-            // stop diagonal movement
             if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
                 input = new Vector2(Mathf.Sign(input.x), 0);
             else
                 input = new Vector2(0, Mathf.Sign(input.y));
-
             StartCoroutine(MoveStep(input));
         }
     }
@@ -42,23 +41,24 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MoveStep(Vector2 direction)
     {
         isMoving = true;
+
         animator.SetFloat("horizontal", direction.x);
         animator.SetFloat("vertical", direction.y);
         animator.SetFloat("speed", 1f);
 
-        Vector3 start = transform.position;
-        Vector3 end = start + (Vector3)(direction * stepSize);
+        Vector2 start = rb.position;
+        Vector2 end = start + direction * stepSize;
         float elapsed = 0f;
 
         while (elapsed < stepDuration)
         {
-            transform.position = Vector3.Lerp(start, end, elapsed/stepDuration);
+            Vector2 newPosition = Vector2.Lerp(start, end, elapsed / stepDuration);
+            rb.MovePosition(newPosition);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        // exact positioning + stop movement
-        transform.position = end;
+        rb.MovePosition(end);
         animator.SetFloat("speed", 0f);
         isMoving = false;
     }

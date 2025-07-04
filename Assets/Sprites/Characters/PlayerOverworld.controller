@@ -64,7 +64,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7120838546515970402}
   m_Solo: 0
@@ -192,7 +192,7 @@ AnimatorStateTransition:
     m_EventTreshold: -0.1
   - m_ConditionMode: 3
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8047653132945225643}
   m_Solo: 0
@@ -217,7 +217,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2481742391786444638}
   m_Solo: 0
@@ -390,7 +390,7 @@ AnimatorStateTransition:
     m_EventTreshold: -0.1
   - m_ConditionMode: 3
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7784327319224480932}
   m_Solo: 0
@@ -415,7 +415,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4742182568625542712}
   m_Solo: 0
@@ -443,7 +443,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0.1
   - m_ConditionMode: 3
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1306110800420201945}
   m_Solo: 0
@@ -468,7 +468,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1458686082124333721}
   m_Solo: 0
@@ -496,7 +496,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0.1
   - m_ConditionMode: 3
     m_ConditionEvent: speed
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0.9
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6179535203877828667}
   m_Solo: 0
