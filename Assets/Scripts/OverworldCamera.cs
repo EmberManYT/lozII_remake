@@ -5,17 +5,26 @@ public class OverworldCamera : MonoBehaviour
     public Transform target;
     public float screenWidth = 16f;
     public float screenHeight = 15f;
+    public float boundaryLeft = -34f;
+    public float boundaryTop = 34f;
+    public float boundaryRight = 161f;
+    public float boundaryBottom = -99f;
     // 256x240 @ 16 ppu
-    public Vector2 cameraOffset = new Vector2(-8.04f, -4.98f); // initial alignment for pond (will change)
+    public Vector2 cameraOffset = new Vector2(-8f, -5f); // initial alignment for pond (will change)
     private float xMin, xMax, yMin, yMax;
 
     void Start()
     {
-        if (target == null) return;
-        Vector2 start = (Vector2)target.position - cameraOffset;
+        float centerX = -2.5f; // center around pond (may change)
+        float centerY = 2.5f;
 
-        xMin = Mathf.Floor(start.x / screenWidth) * screenWidth + cameraOffset.x;
-        yMin = Mathf.Floor(start.y / screenHeight) * screenHeight + cameraOffset.y;
+        xMin = Mathf.Floor(centerX - screenWidth / 2f) + 0.0f;
+        yMin = Mathf.Floor(centerY - screenHeight / 2f) + 0.0f;
+        xMax = xMin + screenWidth;
+        yMax = yMin + screenHeight;
+
+        xMin = Mathf.Clamp(xMin, boundaryLeft, boundaryRight - screenWidth); // clamp around boundary
+        yMin = Mathf.Clamp(yMin, boundaryBottom, boundaryTop - screenHeight);
         xMax = xMin + screenWidth;
         yMax = yMin + screenHeight;
 
@@ -25,66 +34,46 @@ public class OverworldCamera : MonoBehaviour
     void LateUpdate()
     {
         if (target == null) return;
-        Vector2 pos = target.position;
+        bool panned = false;
 
-        // right border crossed
-        if (pos.x >= xMax)
+        if (target.position.x >= xMax) // right
         {
-            xMin = xMax;
+            xMin = xMax - 1f;
             xMax = xMin + screenWidth;
-
-            float centerY = pos.y;
-            yMin = centerY - screenHeight / 2f;
-            yMax = yMin + screenHeight;
-
-            UpdateCameraPosition();
+            panned = true;
         }
-
-        // left border crossed
-        else if (pos.x < xMin)
+        else if (target.position.x < xMin) // left
         {
-            xMax = xMin;
+            xMax = xMin + 1f;
             xMin = xMax - screenWidth;
-
-            float centerY = pos.y;
-            yMin = centerY - screenHeight / 2f;
-            yMax = yMin + screenHeight;
-
-            UpdateCameraPosition();
+            panned = true;
         }
 
-        // top border crossed
-        else if (pos.y >= yMax)
+        if (target.position.y >= yMax) // up
         {
-            yMin = yMax;
+            yMin = yMax - 1f;
             yMax = yMin + screenHeight;
-
-            float centerX = pos.x;
-            xMin = centerX - screenWidth / 2f;
-            xMax = xMin + screenWidth;
-
-            UpdateCameraPosition();
+            panned = true;
         }
-
-        // bottom border crossed
-        else if (pos.y < yMin)
+        else if (target.position.y < yMin) // down
         {
-            yMax = yMin;
+            yMax = yMin + 1f;
             yMin = yMax - screenHeight;
-
-            float centerX = pos.x;
-            xMin = centerX - screenWidth / 2f;
-            xMax = xMin + screenWidth;
-
-            UpdateCameraPosition();
+            panned = true;
         }
+
+        xMin = Mathf.Clamp(xMin, boundaryLeft, boundaryRight - screenWidth);
+        yMin = Mathf.Clamp(yMin, boundaryBottom, boundaryTop - screenHeight);
+        xMax = xMin + screenWidth;
+        yMax = yMin + screenHeight;
+
+        if (panned) UpdateCameraPosition();
     }
 
     void UpdateCameraPosition()
     {
         float camX = (xMin + xMax) / 2f;
         float camY = (yMin + yMax) / 2f;
-
         transform.position = new Vector3(camX, camY, transform.position.z);
         // Debug.Log("Camera position: " + transform.position);
     }

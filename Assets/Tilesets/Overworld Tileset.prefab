@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8459863767074615463}
   - component: {fileID: 2888992181117091829}
   m_Layer: 0
-  m_Name: New Tile Palette
+  m_Name: Overworld Tileset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

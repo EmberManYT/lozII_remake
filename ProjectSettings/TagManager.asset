@@ -2,13 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -41,3 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Overworld
+    uniqueID: 586381615
+    locked: 0
+  - name: Backdrop
+    uniqueID: 1238625951
+    locked: 0
+  - name: Collisions
+    uniqueID: 544564145
+    locked: 0
+  - name: Player
+    uniqueID: 3835022713
+    locked: 0
+  m_RenderingLayers:
+  - Default
