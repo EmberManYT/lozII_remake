@@ -167,7 +167,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""f5c0b664-ba38-4c83-b466-5d673a51bab4"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -178,7 +178,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""83e609b7-3cdc-4c79-ac0c-04e43b01495d"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

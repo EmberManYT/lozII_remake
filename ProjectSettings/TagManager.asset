@@ -11,7 +11,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Overworld
+  - name: Ground
     uniqueID: 586381615
     locked: 0
   - name: Backdrop
@@ -50,8 +50,13 @@ TagManager:
   - name: Collisions
     uniqueID: 544564145
     locked: 0
+  - name: NPC
+    uniqueID: 1556136035
+    locked: 0
   - name: Player
     uniqueID: 3835022713
     locked: 0
   m_RenderingLayers:
   - Default
+  - Background
+  - Player
