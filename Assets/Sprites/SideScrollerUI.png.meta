@@ -1,0 +1,1413 @@
+fileFormatVersion: 2
+guid: 99a4ee7a7aaf847d89967ec1393fa5f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2203988882535544851
+    second: SideScrollerUI_0
+  - first:
+      213: -3383961059843211927
+    second: SideScrollerUI_1
+  - first:
+      213: -3053048921315475200
+    second: SideScrollerUI_2
+  - first:
+      213: -655124059026321225
+    second: SideScrollerUI_3
+  - first:
+      213: -4837234327183633352
+    second: SideScrollerUI_4
+  - first:
+      213: -6166865350347124301
+    second: SideScrollerUI_5
+  - first:
+      213: 7296978328714422637
+    second: SideScrollerUI_6
+  - first:
+      213: -4307454693143465112
+    second: SideScrollerUI_7
+  - first:
+      213: 1078361002078276727
+    second: SideScrollerUI_8
+  - first:
+      213: -8657203563299729565
+    second: SideScrollerUI_9
+  - first:
+      213: -3645679680094266393
+    second: SideScrollerUI_10
+  - first:
+      213: 5151546605745638080
+    second: SideScrollerUI_11
+  - first:
+      213: 3290482460099939294
+    second: SideScrollerUI_12
+  - first:
+      213: -2926042750580797593
+    second: SideScrollerUI_13
+  - first:
+      213: -5948495635742660854
+    second: SideScrollerUI_14
+  - first:
+      213: -3292852742617458478
+    second: SideScrollerUI_15
+  - first:
+      213: -2247966496890194746
+    second: SideScrollerUI_16
+  - first:
+      213: -6779012585536062568
+    second: SideScrollerUI_17
+  - first:
+      213: 3573966400863698318
+    second: SideScrollerUI_18
+  - first:
+      213: -6923360053389057776
+    second: SideScrollerUI_19
+  - first:
+      213: -6701392092731713596
+    second: SideScrollerUI_20
+  - first:
+      213: 8397378595078914097
+    second: SideScrollerUI_21
+  - first:
+      213: -5973812514158763770
+    second: SideScrollerUI_22
+  - first:
+      213: -3555805142294397648
+    second: SideScrollerUI_23
+  - first:
+      213: -8253743567923537547
+    second: SideScrollerUI_24
+  - first:
+      213: 482786173629354462
+    second: SideScrollerUI_25
+  - first:
+      213: 2004398485702935654
+    second: SideScrollerUI_26
+  - first:
+      213: -7054989886384584190
+    second: SideScrollerUI_27
+  - first:
+      213: -5359513308381675251
+    second: SideScrollerUI_28
+  - first:
+      213: -1366372263391024603
+    second: SideScrollerUI_29
+  - first:
+      213: -3377806856178601546
+    second: SideScrollerUI_30
+  - first:
+      213: -8313202674653907036
+    second: SideScrollerUI_31
+  - first:
+      213: -5571106137568789223
+    second: SideScrollerUI_32
+  - first:
+      213: 3873040187017214493
+    second: SideScrollerUI_33
+  - first:
+      213: -3919957379242296480
+    second: SideScrollerUI_34
+  - first:
+      213: -7403613472268901048
+    second: SideScrollerUI_35
+  - first:
+      213: 6504684425590935526
+    second: SideScrollerUI_36
+  - first:
+      213: -8471394101405101841
+    second: SideScrollerUI_37
+  - first:
+      213: 8947199403557611090
+    second: SideScrollerUI_38
+  - first:
+      213: 6552494595672200442
+    second: SideScrollerUI_39
+  - first:
+      213: 6903389448940220678
+    second: SideScrollerUI_40
+  - first:
+      213: -5535915117022963528
+    second: SideScrollerUI_41
+  - first:
+      213: -2424261201755532700
+    second: SideScrollerUI_42
+  - first:
+      213: 2467846532271041030
+    second: SideScrollerUI_43
+  - first:
+      213: 2718082974426638569
+    second: SideScrollerUI_44
+  - first:
+      213: -8588579685791025533
+    second: SideScrollerUI_45
+  - first:
+      213: 7071166113634309778
+    second: SideScrollerUI_46
+  - first:
+      213: 4196334093717965158
+    second: SideScrollerUI_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SideScrollerUI_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de70f8fd9cbd961e0800000000000000
+      internalID: -2203988882535544851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d7a465851c901d0800000000000000
+      internalID: -3383961059843211927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0010a1b8e2461a5d0800000000000000
+      internalID: -3053048921315475200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_3
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b09ce9a32888e6f0800000000000000
+      internalID: -655124059026321225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834d4e81201bedcb0800000000000000
+      internalID: -4837234327183633352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b115e623a4ea6aa0800000000000000
+      internalID: -6166865350347124301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d692fb00123144560800000000000000
+      internalID: 7296978328714422637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_7
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863381947c8d834c0800000000000000
+      internalID: -4307454693143465112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 103
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c82843e9b17fe00800000000000000
+      internalID: 1078361002078276727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f064d1a3f6bd780800000000000000
+      internalID: -8657203563299729565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 103
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb1f1785a1f76dc0800000000000000
+      internalID: -3645679680094266393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_11
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 87
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca86570858fd7740800000000000000
+      internalID: 5151546605745638080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_12
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb09ed1d542aad20800000000000000
+      internalID: 3290482460099939294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_13
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f46060f9b9467d0800000000000000
+      internalID: -2926042750580797593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_14
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07e89b5cb2b27da0800000000000000
+      internalID: -5948495635742660854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_15
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d89d9a70ef6d42d0800000000000000
+      internalID: -3292852742617458478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_16
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c471ed916e9dc0e0800000000000000
+      internalID: -2247966496890194746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b783f58fb1ce1a0800000000000000
+      internalID: -6779012585536062568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d79a28187499130800000000000000
+      internalID: 3573966400863698318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_19
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 87
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011ad9586b84bef90800000000000000
+      internalID: -6923360053389057776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_20
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c75d1ca56fdff2a0800000000000000
+      internalID: -6701392092731713596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 87
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130c52c475b798470800000000000000
+      internalID: 8397378595078914097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_22
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601a8c24b21c81da0800000000000000
+      internalID: -5973812514158763770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_23
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03df803001e37aec0800000000000000
+      internalID: -3555805142294397648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_24
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 71
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57990c684ffc47d80800000000000000
+      internalID: -8253743567923537547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_25
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed1d5ad877333b600800000000000000
+      internalID: 482786173629354462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_26
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66487a09dcd01db10800000000000000
+      internalID: 2004398485702935654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_27
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ac218c314a71e90800000000000000
+      internalID: -7054989886384584190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_28
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 56
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d018eecba0f2f95b0800000000000000
+      internalID: -5359513308381675251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52aa1a17aaba90de0800000000000000
+      internalID: -1366372263391024603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_30
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b178998f8e9f11d0800000000000000
+      internalID: -3377806856178601546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_31
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a73d6f663291ac80800000000000000
+      internalID: -8313202674653907036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_32
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91db6302c747fa2b0800000000000000
+      internalID: -5571106137568789223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_33
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a39f3a78dcfb530800000000000000
+      internalID: 3873040187017214493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_34
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06b779b48838999c0800000000000000
+      internalID: -3919957379242296480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_35
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 56
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845ad13e5c4114990800000000000000
+      internalID: -7403613472268901048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_36
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 27
+        width: 47
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef0d539508454a50800000000000000
+      internalID: 6504684425590935526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_37
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 28
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0d869b2ff8f6a80800000000000000
+      internalID: -8471394101405101841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 27
+        width: 40
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25663a70476da2c70800000000000000
+      internalID: 8947199403557611090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_39
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 28
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af455bf3e132fea50800000000000000
+      internalID: 6552494595672200442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_40
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 27
+        width: 32
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601f24ac024cdcf50800000000000000
+      internalID: 6903389448940220678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b89127188a7c23b0800000000000000
+      internalID: -5535915117022963528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_42
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 20
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4629992084b4b5ed0800000000000000
+      internalID: -2424261201755532700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_43
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 20
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ae13c885d8f3220800000000000000
+      internalID: 2467846532271041030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_44
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e8acb0701298b520800000000000000
+      internalID: 2718082974426638569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_45
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3863a4fa74c3fc880800000000000000
+      internalID: -8588579685791025533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_46
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296d3fe9d14d12260800000000000000
+      internalID: 7071166113634309778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_47
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6698be600af5c3a30800000000000000
+      internalID: 4196334093717965158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_48
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e2285a1bbc64a17886390c027dae25
+      internalID: 2050859975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SideScrollerUI_49
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 71
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0e073cf767148f693d31c1c88cf091
+      internalID: -333556247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2d0e335ad7f944ffc8d427d21ca2f44f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      SideScrollerUI_0: -2203988882535544851
+      SideScrollerUI_1: -3383961059843211927
+      SideScrollerUI_10: -3645679680094266393
+      SideScrollerUI_11: 5151546605745638080
+      SideScrollerUI_12: 3290482460099939294
+      SideScrollerUI_13: -2926042750580797593
+      SideScrollerUI_14: -5948495635742660854
+      SideScrollerUI_15: -3292852742617458478
+      SideScrollerUI_16: -2247966496890194746
+      SideScrollerUI_17: -6779012585536062568
+      SideScrollerUI_18: 3573966400863698318
+      SideScrollerUI_19: -6923360053389057776
+      SideScrollerUI_2: -3053048921315475200
+      SideScrollerUI_20: -6701392092731713596
+      SideScrollerUI_21: 8397378595078914097
+      SideScrollerUI_22: -5973812514158763770
+      SideScrollerUI_23: -3555805142294397648
+      SideScrollerUI_24: -8253743567923537547
+      SideScrollerUI_25: 482786173629354462
+      SideScrollerUI_26: 2004398485702935654
+      SideScrollerUI_27: -7054989886384584190
+      SideScrollerUI_28: -5359513308381675251
+      SideScrollerUI_29: -1366372263391024603
+      SideScrollerUI_3: -655124059026321225
+      SideScrollerUI_30: -3377806856178601546
+      SideScrollerUI_31: -8313202674653907036
+      SideScrollerUI_32: -5571106137568789223
+      SideScrollerUI_33: 3873040187017214493
+      SideScrollerUI_34: -3919957379242296480
+      SideScrollerUI_35: -7403613472268901048
+      SideScrollerUI_36: 6504684425590935526
+      SideScrollerUI_37: -8471394101405101841
+      SideScrollerUI_38: 8947199403557611090
+      SideScrollerUI_39: 6552494595672200442
+      SideScrollerUI_4: -4837234327183633352
+      SideScrollerUI_40: 6903389448940220678
+      SideScrollerUI_41: -5535915117022963528
+      SideScrollerUI_42: -2424261201755532700
+      SideScrollerUI_43: 2467846532271041030
+      SideScrollerUI_44: 2718082974426638569
+      SideScrollerUI_45: -8588579685791025533
+      SideScrollerUI_46: 7071166113634309778
+      SideScrollerUI_47: 4196334093717965158
+      SideScrollerUI_48: 2050859975
+      SideScrollerUI_49: -333556247
+      SideScrollerUI_5: -6166865350347124301
+      SideScrollerUI_6: 7296978328714422637
+      SideScrollerUI_7: -4307454693143465112
+      SideScrollerUI_8: 1078361002078276727
+      SideScrollerUI_9: -8657203563299729565
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public abstract class EnemyController : MonoBehaviour
+{
     protected EnemyState currentState;
 
     [Header("Components")]
@@ -10,18 +11,21 @@ public class EnemyController : MonoBehaviour {
     public LayerMask groundLayer;
 
     [Header("Settings")]
-    public float moveSpeed = 1f; // unique
+    public float moveSpeed = 1f;
     public float detectionRange = 5f;
 
-    protected virtual void Awake() {
+    protected virtual void Awake()
+    {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    protected virtual void Update() {
+    protected virtual void Update()
+    {
         currentState?.Execute();
     }
 
-    public void ChangeState(EnemyState newState) {
+    public void ChangeState(EnemyState newState)
+    {
         currentState?.Exit();
         currentState = newState;
         currentState.Enter();

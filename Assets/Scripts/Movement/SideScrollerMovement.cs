@@ -6,7 +6,7 @@ public class SideScrollerMovement : MonoBehaviour
 {
     [Header("Movement Parameters")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpDelay = 0.1f;
+    [SerializeField] private float jumpDelay = 0.15f;
     [SerializeField] private float jumpForce = 12f;
     [SerializeField] private float airControlSpeedMultiplier = 1f;
     [SerializeField] private LayerMask groundLayer;
@@ -15,21 +15,14 @@ public class SideScrollerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
 
-    [Header("Crouch Settings")]
-    // [SerializeField] private Collider2D playerCollider;
-    // [SerializeField] private SpriteRenderer spriteRenderer;
-    // [SerializeField] private float crouchRatio = 0.5f;
-    // private float originalColliderHeight;
-    // private Vector2 originalColliderOffset;
-    // private float originalSpriteHeight; 
-
     private Rigidbody2D rb;
     private Animator animator;
-    private PlayerControls playerControls; 
+    private PlayerControls playerControls;
+    private BoxCollider2D boxCollider;
+    private PlayerCombatController combat;
 
-    // Movement State Vars
     private Vector2 moveInput;
-    private bool isGrounded;
+    private bool grounded;
     private bool isJumping;
     private bool isFalling;
     private bool isCrouching;
@@ -37,73 +30,34 @@ public class SideScrollerMovement : MonoBehaviour
     private int currentDirection = 1;
     private float jumpDirectionXMomentum = 0f;
 
-    // Animations
-    private static readonly int IsWalking = Animator.StringToHash("isWalking");
-    private static readonly int IsJumping = Animator.StringToHash("isJumping");
-    private static readonly int IsFalling = Animator.StringToHash("isFalling");
-    private static readonly int IsCrouching = Animator.StringToHash("isCrouching");
-    private static readonly int Direction = Animator.StringToHash("direction"); // 1 for right, -1 for left
+    public bool isAttacking { get; private set; }
+    public bool isCrouched => isCrouching;
+    public bool isGrounded => grounded;
+    public Rigidbody2D RB => rb;
+    public Vector2 MoveInput => moveInput;
+
+    private static readonly int animIsWalking = Animator.StringToHash("isWalking");
+    private static readonly int animIsJumping = Animator.StringToHash("isJumping");
+    private static readonly int animIsFalling = Animator.StringToHash("isFalling");
+    private static readonly int animIsCrouching = Animator.StringToHash("isCrouching");
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        combat = GetComponent<PlayerCombatController>();
         playerControls = new PlayerControls();
-
-        // if (spriteRenderer == null)
-        // {
-        //     spriteRenderer = GetComponent<SpriteRenderer>();
-        // }
 
         playerControls.Player.Move.performed += OnMovePerformed;
         playerControls.Player.Move.canceled += OnMoveCanceled;
         playerControls.Player.Jump.started += OnJumpStarted;
         playerControls.Player.Crouch.started += OnCrouchStarted;
         playerControls.Player.Crouch.canceled += OnCrouchCanceled;
-
-        // WILL FIX CROUCH LATER
-        // if (playerCollider != null)
-        // {
-        //     if (playerCollider is CapsuleCollider2D capsule)
-        //     {
-        //         originalColliderHeight = capsule.size.y;
-        //         originalColliderOffset = capsule.offset;
-        //     }
-        //     else if (playerCollider is BoxCollider2D box)
-        //     {
-        //         originalColliderHeight = box.size.y;
-        //         originalColliderOffset = box.offset;
-        //     }
-        //     else
-        //     {
-        //         Debug.LogError("Unsupported Collider2D type! Only CapsuleCollider2D and BoxCollider2D are supported for crouching.");
-        //     }
-        // }
-        // else
-        // {
-        //     Debug.LogError("Player Collider not assigned in SideScrollerMovement script!");
-        // }
-
-        // if (spriteRenderer != null)
-        // {
-        //     originalSpriteHeight = spriteRenderer.bounds.size.y;
-        // }
-        // else
-        // {
-        //     Debug.LogWarning("Sprite Renderer not assigned or found. Crouching visual adjustment might be inaccurate.");
-        //     originalSpriteHeight = originalColliderHeight;
-        // }
     }
 
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Disable();
-    }
+    private void OnEnable() => playerControls.Enable();
+    private void OnDisable() => playerControls.Disable();
 
     private void Update()
     {
@@ -120,7 +74,7 @@ public class SideScrollerMovement : MonoBehaviour
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        if (!isJumping && !isCrouching) 
+        if (!isJumping && !isCrouching)
         {
             UpdateDirection(moveInput.x);
         }
@@ -129,36 +83,44 @@ public class SideScrollerMovement : MonoBehaviour
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         moveInput = Vector2.zero;
-        if (!isJumping) 
+        if (!isJumping)
         {
-            animator.SetBool(IsWalking, false);
+            animator.SetBool(animIsWalking, false);
         }
     }
 
     private void OnJumpStarted(InputAction.CallbackContext context)
     {
-        if (isGrounded && !isCrouching && jumpCoroutine == null)
+        if (animator.GetBool("attackHold")) return;
+        if (grounded && !isCrouching && jumpCoroutine == null)
         {
             isJumping = true;
             isFalling = false;
-            jumpDirectionXMomentum = rb.linearVelocity.x; 
+            jumpDirectionXMomentum = rb.linearVelocity.x;
             jumpCoroutine = StartCoroutine(JumpWithDelay());
         }
     }
 
     private IEnumerator JumpWithDelay()
     {
-        yield return new WaitForSeconds(jumpDelay); 
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); 
-        jumpCoroutine = null; 
+        isCrouching = true;
+        UpdateAnimations();
+
+        yield return new WaitForSeconds(jumpDelay);
+
+        isCrouching = false;
+        isJumping = true;
+        UpdateAnimations();
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        jumpCoroutine = null;
     }
 
     private void OnCrouchStarted(InputAction.CallbackContext context)
     {
-        if (isGrounded)
+        if (grounded)
         {
             isCrouching = true;
-            // SetCrouchCollider(true);
         }
     }
 
@@ -167,47 +129,65 @@ public class SideScrollerMovement : MonoBehaviour
         if (isCrouching)
         {
             isCrouching = false;
-            // SetCrouchCollider(false);
         }
+    }
+
+    public void SetAttacking(bool state)
+    {
+        isAttacking = state;
     }
 
     private void HandleMovement()
     {
-        float currentMoveSpeed = moveSpeed;
+        bool windUpHold = animator.GetBool("attackHold");
 
-        if (isCrouching)
+        if (isAttacking && windUpHold)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // stop movement when crouched
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            if (moveInput.x != 0) UpdateDirection(moveInput.x);
             return;
         }
 
+        // Thrust or any other attack lock: full lock
+        if (isAttacking)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            return;
+        }
+
+        // Crouching: freeze horizontal movement but allow turning
+        if (isCrouching && grounded)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            if (moveInput.x != 0) UpdateDirection(moveInput.x);
+            return;
+        }
+
+        // Jumping and Falling
         if (isJumping)
         {
-            rb.linearVelocity = new Vector2(jumpDirectionXMomentum, rb.linearVelocity.y); 
-            return; 
+            rb.linearVelocity = new Vector2(jumpDirectionXMomentum, rb.linearVelocity.y);
         }
         else if (isFalling)
         {
-            rb.linearVelocity = new Vector2(moveInput.x * moveSpeed * airControlSpeedMultiplier, rb.linearVelocity.y); 
-            if (moveInput.x != 0)
-            {
-                UpdateDirection(moveInput.x);
-            }
+            rb.linearVelocity = new Vector2(moveInput.x * moveSpeed * airControlSpeedMultiplier, rb.linearVelocity.y);
+            if (moveInput.x != 0) UpdateDirection(moveInput.x);
         }
-        else 
+        else // Normal grounded movement
         {
-            rb.linearVelocity = new Vector2(moveInput.x * currentMoveSpeed, rb.linearVelocity.y); 
+            rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+            if (moveInput.x != 0) UpdateDirection(moveInput.x);
         }
     }
 
     private void HandleJumpPhysics()
     {
-        if (rb.linearVelocity.y < 0 && !isGrounded) 
+        if (rb.linearVelocity.y < 0 && !grounded)
         {
             isJumping = false;
             isFalling = true;
         }
-        else if (isGrounded && (isJumping || isFalling)) 
+        else if (grounded && (isJumping || isFalling))
         {
             isJumping = false;
             isFalling = false;
@@ -221,8 +201,8 @@ public class SideScrollerMovement : MonoBehaviour
 
     private void CheckGroundStatus()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if (isGrounded && (isJumping || isFalling))
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (grounded && (isJumping || isFalling))
         {
             isJumping = false;
             isFalling = false;
@@ -234,114 +214,79 @@ public class SideScrollerMovement : MonoBehaviour
         if (xInput > 0)
         {
             currentDirection = 1;
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (xInput < 0)
         {
             currentDirection = -1;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
-        animator.SetFloat(Direction, currentDirection);
     }
 
     private void UpdateAnimations()
     {
-        animator.SetBool(IsCrouching, isCrouching);
+        animator.SetBool(animIsCrouching, isCrouching);
 
-        if (isCrouching)
+        bool isMovingHorizontally = Mathf.Abs(moveInput.x) > 0.01f;
+        animator.SetBool(animIsWalking, isMovingHorizontally && grounded && !isJumping && !isFalling);
+
+        if (!grounded)
         {
-            animator.SetBool(IsWalking, false);
-            animator.SetBool(IsJumping, false);
-            animator.SetBool(IsFalling, false);
+            if (rb.linearVelocity.y > 0.1f)
+            {
+                animator.SetBool(animIsJumping, true);
+                animator.SetBool(animIsFalling, false);
+            }
+            else if (rb.linearVelocity.y < -0.1f)
+            {
+                animator.SetBool(animIsJumping, false);
+                animator.SetBool(animIsFalling, true);
+            }
+        }
+        else
+        {
+            animator.SetBool(animIsJumping, false);
+            animator.SetBool(animIsFalling, false);
+        }
+
+        UpdateColliderForState();
+    }
+
+    public void UpdateColliderForState()
+    {
+        if (isAttacking)
+        {
+            bool windUpHold = animator.GetBool("attackHold");
+
+            if (windUpHold)
+            {
+                boxCollider.offset = new Vector2(0f, 0f);
+                boxCollider.size = new Vector2(1.5f, 2f);
+            }
             return;
         }
 
-        if (isJumping)
+        if (isCrouching)
         {
-            animator.SetBool(IsJumping, true);
-            animator.SetBool(IsFalling, false);
-            animator.SetBool(IsWalking, false);
+            boxCollider.offset = new Vector2(0f, -0.138f);
+            boxCollider.size = new Vector2(1f, 1.724f);
         }
-        else if (isFalling)
+        else if (!grounded)
         {
-            animator.SetBool(IsJumping, false);
-            animator.SetBool(IsFalling, true);
-            animator.SetBool(IsWalking, false);
+            boxCollider.offset = new Vector2(0f, 0f);
+            boxCollider.size = new Vector2(1f, 2f);
         }
-        else if (isGrounded)
+        else
         {
-            animator.SetBool(IsJumping, false);
-            animator.SetBool(IsFalling, false);
-            if (Mathf.Abs(moveInput.x) > 0.01f) 
-            {
-                animator.SetBool(IsWalking, true);
-            }
-            else
-            {
-                animator.SetBool(IsWalking, false);
-            }
-        }
-        else 
-        {
-            animator.SetBool(IsWalking, false);
-            if(rb.linearVelocity.y > 0) 
-            {
-                animator.SetBool(IsJumping, true);
-                animator.SetBool(IsFalling, false);
-            }
-            else if (Mathf.Abs(rb.linearVelocity.y) < 0.1f) 
-            {
-                animator.SetBool(IsJumping, true);
-                animator.SetBool(IsFalling, false);
-            }
+            boxCollider.offset = new Vector2(0f, 0f);
+            boxCollider.size = new Vector2(1f, 1.93f);
         }
     }
 
-    // WILL FIX
-    // private void SetCrouchCollider(bool crouch)
-    // {
-    //     if (playerCollider == null) return;
-
-    //     float heightReduction = originalSpriteHeight * (1f - crouchRatio); 
-    //     float targetCrouchColliderHeight = originalColliderHeight * crouchRatio;
-    //     float deltaHeight = originalColliderHeight - targetCrouchColliderHeight; 
-    //     float newOffsetY = originalColliderOffset.y + (deltaHeight / 2f);
-
-    //     if (crouch)
-    //     {
-    //         if (playerCollider is CapsuleCollider2D capsule)
-    //         {
-    //             capsule.size = new Vector2(capsule.size.x, targetCrouchColliderHeight);
-    //             capsule.offset = new Vector2(originalColliderOffset.x, newOffsetY);
-    //         }
-    //         else if (playerCollider is BoxCollider2D box)
-    //         {
-    //             box.size = new Vector2(box.size.x, targetCrouchColliderHeight);
-    //             box.offset = new Vector2(originalColliderOffset.x, newOffsetY);
-    //         }
-
-    //         transform.position -= new Vector3(0, heightReduction, 0);
-
-    //     }
-    //     else // Standing up
-    //     {
-    //         transform.position += new Vector3(0, heightReduction, 0);
-
-    //         if (playerCollider is CapsuleCollider2D capsule)
-    //         {
-    //             capsule.size = new Vector2(capsule.size.x, originalColliderHeight);
-    //             capsule.offset = originalColliderOffset;
-    //         }
-    //         else if (playerCollider is BoxCollider2D box)
-    //         {
-    //             box.size = new Vector2(box.size.x, originalColliderHeight);
-    //             box.offset = originalColliderOffset;
-    //         }
-    //     }
-    // }
-    
-    private void OnDrawGizmos()     // debugging
+    private void OnDrawGizmos()
     {
         if (groundCheck == null) return;
-        Gizmos.color = isGrounded ? Color.green : Color.red;
+        Gizmos.color = grounded ? Color.green : Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
