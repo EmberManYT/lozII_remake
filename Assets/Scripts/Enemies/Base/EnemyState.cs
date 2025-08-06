@@ -11,4 +11,3 @@ public abstract class EnemyState {
     public abstract void Execute();
     public abstract void Exit();
 }
-

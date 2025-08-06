@@ -2,46 +2,58 @@ using UnityEngine;
 
 public class SwordBeam : MonoBehaviour
 {
+    public static SwordBeam Instance { get; private set; }
+
     [SerializeField] private float speed = 12f;
     [SerializeField] private float maxDistance = 10f;
 
     private Vector2 direction;
     private Vector2 startPos;
+    private bool isActive = false;
 
-    public static bool Exists = false;
-
-    public void Launch(Vector2 dir)
+    public static void InitializeInstance(GameObject prefab)
     {
+        if (Instance != null) return;
+
+        GameObject obj = Instantiate(prefab);
+        Instance = obj.GetComponent<SwordBeam>();
+        obj.SetActive(false);
+        DontDestroyOnLoad(obj);
+    }
+
+    public void Launch(Vector2 spawnPosition, Vector2 dir)
+    {
+        transform.position = spawnPosition;
         direction = dir.normalized;
-        startPos = transform.position;
-        Exists = true;
+        startPos = spawnPosition;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        gameObject.SetActive(true);
+        isActive = true;
     }
 
     private void Update()
     {
+        if (!isActive) return;
+
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
         if (Vector2.Distance(startPos, transform.position) >= maxDistance)
         {
-            DestroyBeam();
+            Deactivate();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DestroyBeam();
+        Deactivate();
     }
 
-    private void OnDestroy()
+    public void Deactivate()
     {
-        Exists = false;
-    }
-
-    private void DestroyBeam()
-    {
-        Destroy(gameObject);
+        isActive = false;
+        gameObject.SetActive(false);
     }
 }

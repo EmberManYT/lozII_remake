@@ -35,6 +35,7 @@ public class PlayerCombatController : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
 
         swordHitbox.SetActive(false); // Ensure hitbox starts off
+        SwordBeam.InitializeInstance(swordBeamPrefab);
 
         playerControls = new PlayerControls();
         playerActions = playerControls.Player;
@@ -165,14 +166,12 @@ public class PlayerCombatController : MonoBehaviour
 
     private void TryFireSwordBeam(int attackType)
     {
-        if (SwordBeam.Exists) return;
+        if (!SwordBeam.Instance || SwordBeam.Instance.gameObject.activeInHierarchy) return;
         if (playerHealth.GetCurrentHealth() != playerHealth.GetMaxHealth()) return;
 
         Vector3 spawnPos = swordCollider != null
             ? swordCollider.bounds.center
             : transform.position;
-
-        GameObject beam = Instantiate(swordBeamPrefab, spawnPos, Quaternion.identity);
 
         Vector2 dir = Vector2.right;
 
@@ -190,11 +189,37 @@ public class PlayerCombatController : MonoBehaviour
                 break;
         }
 
-        beam.GetComponent<SwordBeam>().Launch(dir);
+        SwordBeam.Instance.Launch(spawnPos, dir);
     }
 
     public void TakeDamage(int amount)
     {
         playerHealth?.TakeDamage(amount);
+        if (playerHealth.GetCurrentHealth() <= 0)
+        {
+            if (SwordBeam.Instance && SwordBeam.Instance.gameObject.activeInHierarchy)
+                SwordBeam.Instance.gameObject.SetActive(false);
+        }
     }
+#if UNITY_EDITOR
+private void OnDrawGizmos()
+{
+    // Main Player Hurtbox
+    if (playerCollider != null)
+    {
+        Gizmos.color = Color.red;
+        Vector3 hurtPos = transform.position + (Vector3)playerCollider.offset;
+        Gizmos.DrawWireCube(hurtPos, playerCollider.size);
+    }
+
+    // Sword Hitbox
+    if (swordHitbox != null && swordCollider != null)
+    {
+        Gizmos.color = Color.green;
+        Vector3 swordPos = swordHitbox.transform.position + (Vector3)swordCollider.offset;
+        Gizmos.DrawWireCube(swordPos, swordCollider.size);
+    }
+}
+#endif
+
 }

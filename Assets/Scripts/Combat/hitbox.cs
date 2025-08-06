@@ -7,7 +7,13 @@ public class hitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Debug.Log($"[Hitbox] Triggered with: {other.name}");
+        // Prevent player attacks from affecting shields
+        if (isPlayerAttack && other.gameObject.layer == LayerMask.NameToLayer("Shield"))
+        {
+            Debug.Log("🛡️ Attack blocked by shield!");
+            return;
+        }
+
         Transform root = other.transform.root;
 
         if (isPlayerAttack)
@@ -29,7 +35,7 @@ public class hitbox : MonoBehaviour
             }
         }
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = isPlayerAttack ? Color.green : Color.red;
